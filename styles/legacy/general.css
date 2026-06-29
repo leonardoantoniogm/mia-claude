@@ -1,0 +1,280 @@
+/*
+
+First References 
+
+-Font sizes(px)
+10 /12 /14 /16 /18 /20 /24 /30/ /36 /44 /52 /62 /74 /86 /98
+
+-Spacing System (px)
+/2 /4 /8 /12 /16 /24 /32 /48 /64 /80 /96 /128
+
+--- 01 TYPOGRAPHY SYSTEM
+    -Font weights:
+               Default: 400
+               Medium:500
+               Semi-bold:600
+               Bold:700
+
+     -Line heights:
+          Default: 1
+          Samll:   1.05
+          Medium: 1.2
+          Paragraph Default: 1.6
+
+      -Letter spacing:
+      -0.5px para H1
+       0.75px in Span
+
+
+--- 02 COLORS
+
+      Primary: 
+      Tints: 
+      
+      
+      
+
+      Shades:
+       
+       
+              
+      Accents:  
+      Greys:
+      (lightest grey allowed on #fdf2e9
+      #888
+
+      #767676( lightest grey allowed on #fff)
+      #6f6f6f
+      #555
+      #333
+
+
+      #2C2C2C;
+      https://yeun.github.io/open-color/
+
+     Tints and Sahes generators on Google
+     https://maketintsandshades.com/
+    Tipe el codigo por ejemplp 
+
+--03 IMAGES
+   www.unplash.com use arrow and dowload. 
+   www.uifaces.co 
+
+   squoosh.app para comprimir
+
+
+--04 ICONS
+     https://heroicons.com/
+     https://ionic.io/ionicons
+
+  ---05 SHADOWS
+
+      box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+
+---06 BORBER-RADIUS
+      Default: 9px;
+      Medium:11px
+
+
+---07 WHITESPACE
+     -Spacing System (px)
+    /2 /4 /8 /12 /16 /24 /32 /48 /64 /80 /96 /128
+
+
+  Example Margins
+  margin: 25px 50px 75px 100px;
+  top margin is 25px
+  right margin is 50px
+  bottom margin is 75px
+  left margin is 100px
+
+  margin: 25px 50px 75px;
+  top margin is 25px
+  right and left margins are 50px
+  bottom margin is 75px
+
+  margin: 25px 50px;
+  top and bottom margins are 25px
+  right and left margins are 50px
+
+  margin: 25px;
+  all four margins are 25px
+
+
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  max-width: 140rem;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /*
+  it does not work Safari 
+  scroll-behavior: smooth;
+  */
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+
+  /*This mean is that all elements that overflow the viewport
+  in the X axis so horizontally, will simply be hidden  */
+
+  /*Only works if there is nothing absolutley positioned
+  in relation to body*/
+  overflow-x: hidden;
+}
+
+/*******************************************/
+/*****  GENERAL RE-USABLE COMPOMENTS   *****/
+/*******************************************/
+
+.container {
+  max-width: 140rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 6.4rem;
+  margin-bottom: 4rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 4.8rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.heading-primary,
+.heading-secondary {
+  font-weight: 700;
+  /* color: #333; */
+  color: #2c2c2c;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 4.4rem;
+  line-height: 1.05;
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 3.6rem;
+  line-height: 1.2;
+  margin-bottom: 8rem;
+  text-align: center;
+}
+
+.heading-tertiary {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 4.8rem;
+  text-align: center;
+  color: #5f3dc4;
+}
+
+.subheading {
+  /*porque espan es un inline element*/
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #5f3dc4;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+  text-align: center;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #5f3dc4;
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #845ef7;
+  color: #fff;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #f3f0ff;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.margin-left-small {
+  margin-left: 1.6rem !important;
+}
+
+.social-icon {
+  padding-bottom: 2rem;
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+.icon-color {
+  color: #845ef7 !important;
+}
+
+.center-join {
+  padding-left: 45rem;
+  padding-bottom: 10rem;
+}

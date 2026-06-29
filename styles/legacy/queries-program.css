@@ -1,0 +1,220 @@
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+
+/* Font size 10px / 16px -->0.625= 62.5% 
+Percentage of user's font-size setting */
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
+
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(1fr);
+  }
+
+  .gallery img {
+    width: 100%;
+  }
+
+  .testimonial-text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 22.5em) {
+  html {
+    font-size: 31%;
+  }
+
+  .grid--2-cols,
+  .grid--3-cols {
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 100%;
+  }
+
+  .step-number,
+  .program-ter {
+    text-align: center;
+  }
+
+  .program-2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .logo {
+    width: 10%;
+  }
+
+  .step-img {
+    width: 55%;
+  }
+
+  .footer {
+    padding: 2rem;
+  }
+
+  .grid--footer {
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.6rem;
+  }
+
+  .question * {
+    width: 95%;
+    justify-content: center;
+  }
+
+  .margin-question {
+    width: 30%;
+  }
+}
+
+/*****************************************************/
+
+/* BELLOW 944px (Tablets)*/
+
+/*****************************************************/
+
+@media (max-width: 59em) {
+  /*8px/16px = 50% */
+  html {
+    font-size: 50%;
+  }
+
+  .header {
+    padding: 1% 1%;
+  }
+
+  /* Mobile nav overlay rules moved to styles.css (shared, see "MOBILE NAVIGATION (shared)") */
+}
+
+
+/*****************************************************/
+
+/* BELLOW 768px (MiniIpad)*/
+
+/*****************************************************/
+
+/*Mini iPad 768px/16px*/
+@media (max-width:48em){
+  html{
+    font-size: 44%;
+  }
+}
+
+/*****************************************************/
+
+/* BELLOW 650px (MiniIpad)*/
+
+/*****************************************************/
+/*Mini iPad 650px/16px*/
+@media (max-width:40em){
+  html{
+    font-size: 38%;
+  }
+
+  .step-img {
+    width: 55%;
+  }
+}
+
+/*****************************************************/
+
+/* BELLOW 428px (Iphone y Samsung Galaxy)*/
+
+/*****************************************************/
+/*428px/16px*/
+
+@media (max-width: 27em) {
+  html {
+    font-size: 40%;
+  }
+
+  .testimonials,
+  .grid--3-cols, .grid--2-cols {
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 100%;
+  }
+
+  .how-program {
+    align-items: center;
+  }
+
+  .logo {
+    width: 10%;
+  }
+
+  .heading-primary {
+    font-size: 3.2rem;
+  }
+  .program-img {
+    width: 60%;
+  }
+
+  .testimonial-text {
+    width: 100%;
+  }
+
+  .nav-cta {
+    font-size: 1rem;
+  }
+
+  .btn--form {
+    margin-top: 2rem;
+    margin-left: 25rem;
+  }
+
+  .other-names ul li {
+    font-size: 1rem;
+  }
+
+  .checkbox-program ul li label,
+  .other-names {
+    font-size: 1.2rem;
+  }
+
+  .footer {
+    padding: 2rem;
+  }
+
+  .grid--footer {
+    grid-template-columns: 1fr;
+    align-items: center;
+    font-size: 1.6rem;
+
+    column-gap: 3.2rem;
+    row-gap: 3.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .step-img-box:nth-child(3){
+    grid-row:4;
+  }
+
+  .logo-col{
+    align-items: center;
+  }
+
+ 
+  .sticky .header {
+    
+    height: 10rem;
+
+  }
+
+  .container {
+    max-width: 140rem;
+    padding: 0 1.8rem;
+    margin: 0 auto;
+  }
+  
+  
+}

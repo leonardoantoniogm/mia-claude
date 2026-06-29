@@ -1,0 +1,244 @@
+/**************************/
+/* BELOW 1117px (Smaller desktops) 9px*/
+/**************************/
+
+@media (max-width: 84em) {
+  html {
+    font-size: 56%;
+  }
+
+  .container {
+    width: 120rem;
+  }
+}
+
+/**************************/
+/* BELOW 1010px (Landscape Tablets) 8px */
+/**************************/
+
+@media (max-width: 64em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/*****************************************************/
+
+/* BELLOW 944px (Tablets)*/
+
+/*****************************************************/
+
+@media (max-width: 59em) {
+  /*8px/16px = 50% */
+  html {
+    font-size: 50%;
+  }
+
+  .header {
+    padding: 1% 1%;
+  }
+
+  /* Mobile nav overlay rules moved to styles.css (shared, see "MOBILE NAVIGATION (shared)") */
+}
+
+/**************************/
+/* BELOW 834px (Tablets) 7px */
+/**************************/
+@media (max-width: 52em) {
+  html {
+    font-size: 40%;
+  }
+}
+
+/**************************/
+/* BELOW 787px (Smaller tablets) 6px */
+/**************************/
+
+@media (max-width: 50em) {
+  html {
+    font-size: 35%;
+  }
+
+  .nav-cta a {
+    width: 10rem;
+  }
+
+  .main-nav:nth-child(2) {
+    align-self: start;
+  }
+
+  .main-nav-list li a {
+    width: 10rem;
+  }
+}
+
+/*****************************************************/
+
+/* BELLOW 704px (Smaller Tablets)*/
+
+/*****************************************************/
+
+/*
+Calculos
+700px/16px que 43.75 --> 44% 
+
+*/
+
+@media (max-width: 44em) {
+}
+
+/**************************/
+/* BELOW 654px (phones) 5px */
+/**************************/
+@media (max-width: 40rem) {
+  html {
+    font-size: 31%;
+  }
+}
+
+/**************************/
+/* BELOW 544px (Phones) 4px */
+/**************************/
+
+@media (max-width: 34em) {
+  html {
+    font-size: 28%;
+  }
+
+  .h2-center {
+    font-size: 6rem;
+  }
+
+  .logo {
+    width: 60%;
+  }
+
+  .grid--3-cols {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .question {
+    padding-left: 60rem;
+  }
+
+  .header {
+    max-height: 8.6rem;
+    padding: 12rem 0rem;
+  }
+
+  .grid--footer {
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .question {
+    padding-left: 14rem;
+  }
+
+  .card-img {
+    max-width: 80%;
+    border-radius: 10%;
+  }
+}
+
+/**************************/
+/* BELOW 428px (Phones) 3px */
+/**************************/
+
+@media (max-width: 27em) {
+  html {
+    font-size: 22%;
+  }
+
+  .logo {
+    width: 30%;
+  }
+
+  .grid--footer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+}
+
+/**************************/
+/* BELOW 360px (Phones) 3px */
+/**************************/
+
+@media (max-width: 22.5em) {
+  html {
+    font-size: 31%;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .grid--3-cols {
+    grid-template-columns: 1fr;
+  }
+
+  /* .h2-center {
+    font-size: 4rem;
+  } */
+
+  .img-gallery {
+    max-width: 80%;
+  }
+  .logo {
+    width: 20%;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .card-img {
+    width: 60%;
+    margin-left: 15rem;
+  }
+
+  .card-description {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .grid--footer {
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding-left: 0rem;
+
+    padding-right: 0rem;
+  }
+
+  .logo-col:nth-child(3) {
+    margin-left: 10rem;
+  }
+
+  .header {
+    display: none;
+  }
+}
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/

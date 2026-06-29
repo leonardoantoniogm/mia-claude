@@ -3,6 +3,8 @@ import Head from "next/head";
 import { useForm, Controller, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import {
   registrationSchema,
   stepFields,
@@ -72,7 +74,8 @@ export default function RegisterPage() {
       <Head>
         <title>Inscripción — MIA Learning Center</title>
       </Head>
-      <div style={{ maxWidth: "640px", margin: "0 auto", padding: "20px" }}>
+      <Header />
+      <div style={{ maxWidth: "640px", margin: "40px auto", padding: "20px" }}>
         <h1>
           Inscripción — Paso {step} de {TOTAL_STEPS}
         </h1>
@@ -322,6 +325,7 @@ export default function RegisterPage() {
           }
         `}</style>
       </div>
+      <Footer />
     </>
   );
 }
