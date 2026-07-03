@@ -1,151 +1,156 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useStickyNav } from "@/hooks/useStickyNav";
 
 const playGallery = [
-  { src: "gal2.jpg", alt: "Creativity on the yard", title: '"Creativity on the Yard"' },
-  { src: "gal3.jpg", alt: "Great Smile", title: '"Great Smiles "' },
-  { src: "gal4.jpg", alt: "Individual Attention", title: '"Individual Attention"' },
-  { src: "gal5.jpg", alt: "Friendship", title: '"Friendship"' },
-  { src: "gal6.jpg", alt: "Two girls seed a plant", title: '"Love for Plants"' },
-  { src: "gal7.jpg", alt: "Passion for Gardening", title: '"Passion for Gardening"' },
-  { src: "gal8.jpg", alt: "Our first flying", title: '"Our First Flying"' },
-  { src: "gal9.jpg", alt: "Taking care the plants", title: '"Taking Care of the Plants"' },
-  { src: "gal10.jpg", alt: "Dancing on the Sand", title: '"Dancing on the Sand"' },
-  { src: "gal11.jpg", alt: "Games on the Yard", title: '"Games on the Yard"' },
-  { src: "gal12.jpg", alt: "Together We Climb", title: '"Together We Climb"' },
-  { src: "gal13.jpg", alt: "Power of Play", title: '"Power of Play"' },
+  { src: "gal2.jpg",  title: "Creativity on the Yard" },
+  { src: "gal3.jpg",  title: "Great Smiles" },
+  { src: "gal4.jpg",  title: "Individual Attention" },
+  { src: "gal5.jpg",  title: "Friendship" },
+  { src: "gal6.jpg",  title: "Love for Plants" },
+  { src: "gal7.jpg",  title: "Passion for Gardening" },
+  { src: "gal8.jpg",  title: "Our First Flying" },
+  { src: "gal9.jpg",  title: "Taking Care of the Plants" },
+  { src: "gal10.jpg", title: "Dancing on the Sand" },
+  { src: "gal11.jpg", title: "Games on the Yard" },
+  { src: "gal12.jpg", title: "Together We Climb" },
+  { src: "gal13.jpg", title: "Power of Play" },
 ];
 
 const spanishGallery = [
-  { src: "gal14.jpg", alt: "Anatomy Class in Spanish", title: '"Science Class in Spanish"' },
-  {
-    src: "gal15.jpg",
-    alt: "Recognize the face in Spanish",
-    title: '"Recognize the Face in Spanish "',
-  },
-  { src: "gal16.jpg", alt: "Building a Tower", title: '"Building a Tower"' },
-  { src: "gal17.jpg", alt: "Playing with Primary Colors", title: '"Playing with Primary Colors"' },
-  { src: "gal18.jpg", alt: "Princess Dreaming", title: '"Princess Dreaming"' },
-  { src: "gal19.jpg", alt: "Finding a Talent", title: '"Finding a Talent"' },
-  { src: "gal20.jpg", alt: "A Future Sculpture", title: '"A Future Artist"' },
-  { src: "gal21.jpg", alt: "Tea and Snack Time", title: '"Tea and Snack Time"' },
-  { src: "gal22.jpg", alt: "Spanish Art", title: '"Spanish Art"' },
-  { src: "gal23.jpg", alt: "My First Spanish Word", title: '"My First Spanish Word"' },
-  { src: "gal24.jpg", alt: "Drawing his Dreams", title: '"Drawing His Dreams"' },
-  { src: "gal25.jpg", alt: "Building Together", title: '"Building Together"' },
-  { src: "gal26.jpg", alt: "Inventive Spelling", title: '"Inventive Spelling"' },
-  { src: "gal27.jpg", alt: "Total Dedication", title: '"Total Dedication"' },
-  { src: "gal28.jpg", alt: "Painting Carefully", title: '"Painting Carefully"' },
-  { src: "gal29.jpg", alt: "Making their Team", title: '"Making their Team"' },
-  { src: "gal30.jpg", alt: "Cultivate Patience", title: '"Cultivate Patience"' },
-  { src: "gal31.jpg", alt: "Creating her World", title: '"Creating Her World"' },
-  { src: "gal32.jpg", alt: "Nature and Art", title: '"Nature and Art"' },
-  { src: "gal33.jpg", alt: "Painting Masterpiece", title: '"Painting a Masterpiece"' },
-  { src: "gal34.jpg", alt: "A great Dress Designer", title: '"A great Dress Designer"' },
-  { src: "gal35.jpg", alt: "A great Dress Designer", title: '"Her Dress Designer is Ready!"' },
-  { src: "gal36.jpg", alt: "My first Hand Job", title: '" AfterSchool Art"' },
-  {
-    src: "gal37.jpg",
-    alt: "Choosing my Musical Instrument",
-    title: '"Choosing my Musical Instrument"',
-  },
+  { src: "gal14.jpg", title: "Science Class in Spanish" },
+  { src: "gal15.jpg", title: "Recognize the Face in Spanish" },
+  { src: "gal16.jpg", title: "Building a Tower" },
+  { src: "gal17.jpg", title: "Playing with Primary Colors" },
+  { src: "gal18.jpg", title: "Princess Dreaming" },
+  { src: "gal19.jpg", title: "Finding a Talent" },
+  { src: "gal20.jpg", title: "A Future Artist" },
+  { src: "gal21.jpg", title: "Tea and Snack Time" },
+  { src: "gal22.jpg", title: "Spanish Art" },
+  { src: "gal23.jpg", title: "My First Spanish Word" },
+  { src: "gal24.jpg", title: "Drawing His Dreams" },
+  { src: "gal25.jpg", title: "Building Together" },
+  { src: "gal26.jpg", title: "Inventive Spelling" },
+  { src: "gal27.jpg", title: "Total Dedication" },
+  { src: "gal28.jpg", title: "Painting Carefully" },
+  { src: "gal29.jpg", title: "Making Their Team" },
+  { src: "gal30.jpg", title: "Cultivate Patience" },
+  { src: "gal31.jpg", title: "Creating Her World" },
+  { src: "gal32.jpg", title: "Nature and Art" },
+  { src: "gal33.jpg", title: "Painting a Masterpiece" },
+  { src: "gal34.jpg", title: "A Great Dress Designer" },
+  { src: "gal35.jpg", title: "Her Dress Designer is Ready!" },
+  { src: "gal36.jpg", title: "AfterSchool Art" },
+  { src: "gal37.jpg", title: "Choosing my Musical Instrument" },
 ];
 
-const landscapeGallery = [
-  { src: "gallandscp1.jpg", alt: "Children in Class in Spanish", title: '"Welcome to MIA"' },
-  { src: "gallandscp2.jpg", alt: "A place for Friendship", title: '"A place for Friendship"' },
-  { src: "gallandscp4.jpg", alt: "Playing Outdoor II", title: '"It is funnier Outdoors"' },
+const activities = [
+  { icon: "🎵", label: "Music", color: "bg-brand-blue text-white" },
+  { icon: "🎨", label: "Painting", color: "bg-brand-red text-white" },
+  { icon: "✂️", label: "Crafts", color: "bg-brand-green text-white" },
+  { icon: "🔬", label: "Science", color: "bg-brand-yellow text-gray-900" },
 ];
+
+const landscape = [
+  { src: "gallandscp1.jpg", title: "Welcome to MIA" },
+  { src: "gallandscp2.jpg", title: "A Place for Friendship" },
+  { src: "gallandscp4.jpg", title: "It is Funnier Outdoors" },
+];
+
+function GalleryGrid({ images }: { images: { src: string; title: string }[] }) {
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      {images.map((img) => (
+        <div key={img.src} className="group relative overflow-hidden rounded-2xl aspect-square bg-gray-100">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`/img/${img.src}`}
+            alt={img.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-end">
+            <p className="text-white text-xs font-bold px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {img.title}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function Gallery() {
-  useStickyNav(".gallery-inst");
-
   return (
     <>
       <Head>
-        <title>MIA — and our Gallery is our best reference</title>
+        <title>Gallery — MIA Learning Center</title>
       </Head>
 
       <Header />
 
       <main>
-        <div className="container">
-          <h2 className="heading-secondary h2-center">In MIA, We Teach in the Natural World</h2>
-          <p className="step-description">
-            We want MIA Learning Center to be a place where differences are embraced and
-            celebrated and being unique or different is a gift. We want it to be a place where
-            the community comes to speak and learn Spanish. We want to be a leader in
-            afterschool multicultural and immersive education and a community that is always
-            listening, sharing, learning, and positively growing.
-          </p>
-        </div>
+        {/* HERO */}
+        <section className="bg-gradient-to-br from-yellow-50 to-orange-50 py-16">
+          <div className="max-w-3xl mx-auto px-4 text-center">
+            <span className="section-subtitle">Our Moments</span>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+              Life at MIA 📸
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              We want MIA to be a place where differences are celebrated and being
+              unique is a gift. Here is a glimpse into the joy, creativity and
+              learning that happen every day.
+            </p>
+          </div>
+        </section>
 
-        <div className="container gallery-inst">
-          {playGallery.map((g) => (
-            <figure className="gallery-item gallery-distance effect-shadow" key={g.src}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`/img/${g.src}`} alt={g.alt} />
-              <span className="title-gallery">{g.title}</span>
-            </figure>
-          ))}
-        </div>
+        {/* PLAY SECTION */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="section-subtitle">Outdoors & Play</p>
+            <h2 className="section-title mb-8">We Teach in the Natural World</h2>
+            <GalleryGrid images={playGallery} />
+          </div>
+        </section>
 
-        <div className="container">
-          <h2 className="heading-secondary h2-center">
-            In MIA, Spanish is integrated in all the programs
-          </h2>
-          <p className="step-description">
-            Themes and topics cycle through about every 3 months and focus on instilling an
-            appreciation for the arts, culture and the Spanish language.
-          </p>
-          <ul className="gallery-top-ul">
-            <li className="gallery-top-li">
-              <ion-icon className="list-icon-blue" name="musical-notes-outline"></ion-icon>
-              <span>Music</span>
-            </li>
-            <li className="gallery-top-li">
-              <ion-icon className="list-icon-red" name="color-palette-outline"></ion-icon>
-              <span>Painting</span>
-            </li>
-            <li className="gallery-top-li">
-              <ion-icon className="list-icon-green" name="hand-left-outline"></ion-icon>
-              <span>Crafts</span>
-            </li>
-            <li className="gallery-top-li">
-              <ion-icon className="list-icon-yellow" name="body-outline"></ion-icon>
-              <span>Science</span>
-            </li>
-          </ul>
-        </div>
-        <div className="container gallery-inst">
-          {spanishGallery.map((g) => (
-            <figure className="gallery-item gallery-distance effect-shadow" key={g.src}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`/img/${g.src}`} alt={g.alt} />
-              <span className="title-gallery">{g.title}</span>
-            </figure>
-          ))}
-        </div>
+        {/* SPANISH SECTION */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="section-subtitle">Spanish Integrated in Everything</p>
+            <h2 className="section-title mb-6">Art, Music, Science &amp; More</h2>
+            <div className="flex flex-wrap gap-3 justify-center mb-10">
+              {activities.map((a) => (
+                <span key={a.label} className={`${a.color} px-5 py-2 rounded-full font-bold text-sm flex items-center gap-2`}>
+                  {a.icon} {a.label}
+                </span>
+              ))}
+            </div>
+            <GalleryGrid images={spanishGallery} />
+          </div>
+        </section>
 
-        <h2 className="heading-secondary h2-center">
-          Socializing <br />
-          We Build Friendships and Share Values
-        </h2>
-
-        <div className="container">
-          {landscapeGallery.map((g) => (
-            <figure
-              className="gallery-item gallery-distance effect-shadow size-landscp"
-              key={g.src}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="img-gallery" src={`/img/${g.src}`} alt={g.alt} />
-              <span className="title-gallery-2">{g.title}</span>
-            </figure>
-          ))}
-        </div>
+        {/* SOCIALIZING SECTION */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="section-subtitle">Socializing</p>
+            <h2 className="section-title mb-8">We Build Friendships &amp; Share Values</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              {landscape.map((img) => (
+                <div key={img.src} className="group relative overflow-hidden rounded-3xl aspect-video bg-gray-100">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`/img/${img.src}`}
+                    alt={img.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                    <p className="text-white font-bold text-sm">{img.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

@@ -1,180 +1,141 @@
 import Head from "next/head";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useStickyNav } from "@/hooks/useStickyNav";
+
+const programs = [
+  {
+    icon: "🏫",
+    code: "OOSH",
+    color: "bg-brand-blue",
+    textColor: "text-white",
+    title: "Out Of School Hours",
+    img: "/img/program2.jpg",
+    imgAlt: "Children playing at MIA",
+    features: [
+      "Fun, supportive after-school program for children up to 12 years old.",
+      "Structured homework time with teacher support plus unstructured play time.",
+      "Develops social skills: communication, conflict resolution and teamwork.",
+      "Intra-personal growth through autonomy, critical thinking and personal responsibility.",
+      "Activities include gardening, exploration, exercise, farm animals and more.",
+    ],
+  },
+  {
+    icon: "📚",
+    code: "PTC",
+    color: "bg-brand-green",
+    textColor: "text-white",
+    title: "Private Tutoring Class",
+    img: "/img/program3.jpg",
+    imgAlt: "Student learning Spanish",
+    features: [
+      "1:1 or small group Spanish classes for all learners — children, teenagers, adults.",
+      "Builds Spanish skills through explicit instruction and engaging activities.",
+      "Lessons are developmentally appropriate and tailored to each student.",
+      "Classes at MIA facilities or any location of your preference.",
+      "Currently serving homeschooling families with a wide range of Spanish tutoring.",
+    ],
+  },
+  {
+    icon: "🌞",
+    code: "SA",
+    color: "bg-brand-yellow",
+    textColor: "text-gray-900",
+    title: "Seasonal Activities",
+    img: "/img/program1.jpg",
+    imgAlt: "Children at a seasonal activity",
+    features: [
+      "Seasonal activities so your children never miss out on Spanish learning.",
+      "Parents Night Out — once per month, a themed Spanish party for the kids.",
+      "A relaxing night for parents while children are cared for and learning.",
+      "Fully designed camps for every school holiday throughout the year.",
+      "Christmas, Spring Break, Summer and Fall Camps.",
+    ],
+  },
+];
 
 export default function Programs() {
-  useStickyNav(".section-how");
-
   return (
     <>
       <Head>
-        <title>MIA — is a Spanish Learning Center that offers three programs</title>
+        <title>Our Programs — MIA Learning Center</title>
       </Head>
 
       <Header />
 
       <main>
-        <section className="section-how">
-          <div className="container">
-            <span className="subheading program-span">Our Three programs</span>
-            <h2 className="heading-secondary">
-              MIA Learning Center Offers Three Unique Programs
-            </h2>
-            <p className="step-description">
-              That provide childcare for working/busy parents and Spanish language instruction
-              for students. Humans are smarter, develop stronger skills, and solve problems
-              faster when they take time to stop and learn from those who are different from
-              themselves, or from those whose cultures have different belief systems than their
-              own or from ideas that couldn&apos;t be any further from their own. Also, research
-              tells us that humans are more fulfilled and feel better about themselves when they
-              are learning. At MIA Learning Center, not only do we believe that learning Spanish
-              as a second language a wonderful way to embrace differences and work toward
-              bettering life for all, but we believe it is also a generous path in which to
-              acquire essential human skills such as critical thinking, creativity, communication
-              and collaboration. We also believe that educating our children with this
-              philosophy is a way to genuinely create positive change.
+        {/* PAGE HERO */}
+        <section className="bg-gradient-to-br from-sky-50 to-blue-100 py-16">
+          <div className="max-w-3xl mx-auto px-4 text-center">
+            <span className="section-subtitle">What We Offer</span>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+              Three programs for your family
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              At MIA Learning Center we believe learning Spanish is a generous path
+              to acquire essential human skills — critical thinking, creativity,
+              communication and collaboration. We designed three programs to fit
+              every family&apos;s needs.
             </p>
-          </div>
-
-          <div className="container grid grid--2-cols grid--center-v">
-            <div className="step-img-box program-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/img/program2.jpg" className="step-img" alt="A boy and girl playing" />
-            </div>
-
-            <div className="step-text-box">
-              <p className="step-number">01</p>
-              <h3 className="heading-tertiary program-ter">Out Of School Hours (OOSH)</h3>
-              <ul className="step-description">
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Fun, supportive and productive after-school program for children until 12 years
-                  old.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Includes structured homework time with teacher support as well as unstructured
-                  time for play, exploring interests and growing friendships.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Designed to foster and develop social skills/abilities such as effective
-                  communication, conflict resolution and teamwork.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Intra-personal growth and positive identity formation, through activities that
-                  encourage autonomy, critical thinking and personal responsibility.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  We offer activities such as gardening, exploration, exercise and coordination,
-                  food and environment, farm animals and so forth.
-                </li>
-              </ul>
-            </div>
-
-            <div className="step-text-box">
-              <p className="step-number">02</p>
-              <h3 className="heading-tertiary program-ter">Private Tutoring Class (PTC)</h3>
-              <ul className="step-description">
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  1:1 or small group Spanish language classes for all learners (children,
-                  teenagers, adults).
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Designed to build Spanish language skills through explicit instruction and
-                  engaging activities.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Lessons are developmentally appropriate and are catered to meet the individual
-                  Spanish needs of each student.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  These classes can be placed at MIA facilities or any other locations of your
-                  preferences.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Currently our wide range of Spanish tutoring classes are addressed at
-                  homeschooling families.
-                </li>
-              </ul>
-            </div>
-
-            <div className="step-img-box">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/img/program3.jpg"
-                className="step-img"
-                alt="A boy listens his teacher at a school"
-              />
-            </div>
-
-            <div className="step-text-box">
-              <p className="step-number">03</p>
-              <h3 className="heading-tertiary program-ter">Seasonal Activities (SA)</h3>
-              <ul className="step-description">
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Because we want to teach Spanish as much as we can, there is no chance you can
-                  miss to be part of MIA, that is why we designed seasonal activities, which
-                  allow your children to get involved with a second language.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Parents Night Out, once per month we give you the chance to bring your children
-                  to a special activity where we introduce the basic vocabulary while we have a
-                  theme party.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  This night can be special too for you and your partner to take away from
-                  routine and with the tranquility that your children are taking care of and
-                  still immerse in the educational process.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  Camps: we fully designed a plan for each occasion of the year where regular
-                  schools are closed.
-                </li>
-                <li>
-                  <ion-icon className="list-icon" name="checkmark-outline"></ion-icon>
-                  These are Christmas, Spring Break, Summer and Fall Camps.
-                </li>
-              </ul>
-            </div>
-
-            <div className="step-img-box">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/img/program1.jpg"
-                className="step-img"
-                alt="A baby photo captured by Christian Bowen, check it unsplash.com"
-              />
-            </div>
           </div>
         </section>
 
-        <div>
-          <hr />
-        </div>
-        <div className="question container">
-          <h1 className="cta-h2" style={{ color: "#5f3dc4" }}>
-            Comments?
-          </h1>
-          <p className="cta-h3">
-            For any inquiries, feel free to contact us at{" "}
-            <a href="mailto:multiculturalimmersionacademy@gmail.com">
-              multiculturalimmersionacademy@gmail.com
-            </a>
-          </p>
-        </div>
+        {/* PROGRAMS */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+            {programs.map((p, i) => (
+              <div
+                key={p.code}
+                className={`grid md:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+              >
+                {/* Image side — alternate left/right */}
+                <div className={i % 2 === 1 ? "md:order-2" : ""}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.img}
+                    alt={p.imgAlt}
+                    className="rounded-3xl shadow-xl w-full object-cover aspect-video"
+                  />
+                </div>
+
+                {/* Text side */}
+                <div className={i % 2 === 1 ? "md:order-1" : ""}>
+                  <div className={`inline-flex items-center gap-2 ${p.color} ${p.textColor} rounded-2xl px-4 py-2 mb-4`}>
+                    <span className="text-2xl">{p.icon}</span>
+                    <span className="font-extrabold text-sm uppercase tracking-wide">{p.code}</span>
+                  </div>
+                  <h2 className="text-3xl font-extrabold text-gray-900 mb-6">{p.title}</h2>
+                  <ul className="space-y-3">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex items-start gap-3 text-gray-600">
+                        <span className="text-brand-blue font-bold mt-0.5 shrink-0">✓</span>
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-2xl mx-auto px-4 text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 mb-4">
+              Questions? We&apos;re happy to help!
+            </h2>
+            <p className="text-gray-500 mb-8">
+              Contact us at{" "}
+              <a href="mailto:multiculturalimmersionacademy@gmail.com" className="text-brand-blue font-bold hover:underline">
+                multiculturalimmersionacademy@gmail.com
+              </a>
+            </p>
+            <Link href="/register" className="btn-primary text-lg px-8 py-4">
+              ✏️ Register Now
+            </Link>
+          </div>
+        </section>
       </main>
 
       <Footer />
