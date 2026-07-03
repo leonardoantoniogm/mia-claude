@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Nunito', sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-gray-800;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-3 px-6 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply bg-brand-yellow hover:bg-brand-yellow-dark text-gray-900 font-bold py-3 px-6 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline {
+    @apply border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-bold py-3 px-6 rounded-2xl transition-all duration-200;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-4;
+  }
+  .section-subtitle {
+    @apply text-brand-blue font-bold uppercase tracking-widest text-sm text-center mb-2;
+  }
+  .card {
+    @apply bg-white rounded-3xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200;
+  }
+}

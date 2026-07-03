@@ -2,228 +2,210 @@ import Head from "next/head";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useStickyNav } from "@/hooks/useStickyNav";
 
-const testimonials = [
+const programs = [
   {
-    img: "testimonio1.png",
-    quote: "We love MIA.",
-    rest: "My daughter is 3 and has been attending since the soft opening in December. Mrs. Claudia and her staff are simply amazing. My daugther is always happy when I pick her up and very excited to tell me about the Spanish she is learning. Priceless!",
-    name: "Kelli Rawls",
+    icon: "🌞",
+    code: "SA",
+    title: "Seasonal Activities",
+    color: "bg-brand-yellow",
+    textColor: "text-gray-900",
+    description:
+      "Holiday camps, Parents Night Out and seasonal events where children learn Spanish through themed parties and creative activities.",
   },
   {
-    img: "testimonio2.png",
-    quote: "MIA has been such a blessing to us!",
-    rest: "Claudia and her team are phenomenal with the kids. I started out only going 2 days a week, but my son begs me to go when he realizes I'm not driving him to MIA! I know he's not only in safe hands but being nurtured and being exposed to culture and language that he doesn't get at home! We love MIA!",
-    name: "Rachel Gandee",
+    icon: "🏫",
+    code: "OOSH",
+    title: "Out Of School Hours",
+    color: "bg-brand-blue",
+    textColor: "text-white",
+    description:
+      "Fun, supportive after-school program for children up to 12 years old. Homework help, play, and Spanish immersion — all in one place.",
   },
   {
-    img: "testimonio3.png",
-    quote: "We are so grateful",
-    rest: "to have afterschool care our children look forward to everyday and that we can rely on. The teachers are so wonderful and kind and our kids Spanish has really improved since starting. This place is a godsend!",
-    name: "Jennifer Strang",
-  },
-  {
-    img: "testimonio4.jpg",
-    quote:
-      "Multicultural Immersion Academy is an incredibly kind and competent group of people.",
-    rest: "We adore the high energy from the caretakers while working with the children, and felt incredibly loved by their care and attention to our daughter. Everyone's utmost concern is for the children, whether that be their safety, educational play, or emotional well-being. Thank you, MIA, for everything you do!",
-    name: "Laura Westby Cannon",
-  },
-  {
-    img: "testimonio5.jpg",
-    quote: "Theacher's from MIA have been amazing to my two girls (6,3).",
-    rest: "using multiple methods when teaching them Spanish. They have done projects following the live cycle of a seed and plant including planting and taking care of a plant and butterflies. They play games in Spanish to reinforce and introduce new topics. She also uses video songs at the end of the sessions to cover fundamentals. One of my favorite lessons I observed was my daughter was so excited to show her teacher her baby book.",
-    name: "Jackie Epping",
-  },
-  {
-    img: "testimonio6.jpg",
-    quote: "Claudia and her approach have been working with my boys for a few years now.",
-    rest: "They look forward to their lesson every week as she makes learning FUN! Her teaching style is extremely inventive. She continually comes up with new and creative ways to get the lessons across. She is very patient and constantly gives positive reinforcement. I wholeheartedly recommend starting lessons with Claudia-the earlier the better!",
-    name: "Julies Groves",
-  },
-  {
-    img: "testimonio7.jpg",
-    quote:
-      "Iam an educational consultant and I am throughly impressed by MIA's Spanish lessons,",
-    rest: "specifically Mrs. Claudia's classes week after week. She has taught my son for over two years and he enjoys every minute of it. Her love for children shines in each class! From an educational perspective MIA's lessons are well planned, address all types of learning styles! Another outstanding aspect about MIA's approach, is it can adapt teaching to tie into whatever I am doing at home with my little man! I highly recommend trying a class with her because she is the absolute best!!",
-    name: "Grace Bradham",
-  },
-  {
-    img: "testimonio8.jpg",
-    quote: "MIA has been tutoring my two kids for over three years.",
-    rest: "MIA and Claudia have become like family to us. Her energy and genuine love for kids is infectious and pervades her teaching. This is the quality that has been most valuable to us and what has enabled the kids to continue wanting to learn Spanish. When the kids were younger, Claudia used play, cooking, crafts, and other activities to introduce and reinforce vocabulary. Now she engages them with clever games designed to review and learn new vocabulary. I love that she moves at their own pace and, yet, gently challenges them to learn more.",
-    name: "Tammy Groher",
+    icon: "📚",
+    code: "PTC",
+    title: "Private Tutoring Class",
+    color: "bg-brand-green",
+    textColor: "text-white",
+    description:
+      "1-on-1 or small group Spanish lessons tailored to any age or skill level, at our facility or your preferred location.",
   },
 ];
 
-export default function Home() {
-  useStickyNav(".section-hero");
+const values = [
+  { icon: "🌍", title: "Who We Are", text: "A learning center with a fun, creative and adaptive approach to teach Spanish as a second language." },
+  { icon: "🎯", title: "What We Want", text: "We offer families an immersive and flexible Spanish learning program in a fun, engaging, and inclusive environment." },
+  { icon: "💎", title: "Our Values", text: "At our core is the idea that differences and diversity make everything better and stronger." },
+];
 
+const testimonials = [
+  { img: "testimonio1.png", name: "Kelli Rawls", quote: "Mrs. Claudia and her staff are simply amazing. My daughter is always happy when I pick her up and very excited to tell me about the Spanish she is learning. Priceless!" },
+  { img: "testimonio2.png", name: "Rachel Gandee", quote: "My son begs me to go when he realizes I'm not driving him to MIA! I know he's not only in safe hands but being nurtured and exposed to culture he doesn't get at home!" },
+  { img: "testimonio3.png", name: "Jennifer Strang", quote: "We are so grateful to have afterschool care our children look forward to everyday. The teachers are so wonderful and our kids' Spanish has really improved!" },
+  { img: "testimonio4.jpg", name: "Laura Westby Cannon", quote: "MIA is an incredibly kind and competent group of people. Everyone's utmost concern is for the children — their safety, educational play, and emotional well-being." },
+  { img: "testimonio6.jpg", name: "Julies Groves", quote: "Her teaching style is extremely inventive. She continually comes up with new and creative ways to get lessons across. I wholeheartedly recommend Claudia!" },
+  { img: "testimonio8.jpg", name: "Tammy Groher", quote: "MIA and Claudia have become like family to us. Her energy and genuine love for kids is infectious and pervades her teaching." },
+];
+
+export default function Home() {
   return (
     <>
       <Head>
-        <title>MIA — Learning Center in North Charleston, South Carolina.</title>
-        <meta
-          name="description"
-          content="Multicultural Immersion Academy is a learning center with a fun, creative and adaptive approach to teaching and learning Spanish as a second language. We are located in North Charleston, South Carolina."
-        />
+        <title>MIA Learning Center — Spanish Immersion in North Charleston, SC</title>
+        <meta name="description" content="Multicultural Immersion Academy is a fun, creative Spanish learning center in North Charleston, South Carolina." />
       </Head>
 
       <Header />
 
       <main>
-        <section className="section-hero">
-          <div className="hero">
-            <div className="hero-text-box">
-              <h1 className="heading-primary">
-                Did you know that Spanish is the second most spoken language in the USA, after
-                English?
-              </h1>
-              <p className="hero-description">
-                For this reason, we are an important resource for you and your family! At MIA
-                Learning Center, we instill a love for Spanish and fire up a curiosity for other
-                cultures!
-              </p>
-              <Link href="/programs" className="btn btn--outline">
-                More Info...
+        {/* HERO */}
+        <section className="bg-gradient-to-br from-sky-50 via-white to-yellow-50 py-16 md:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <span className="inline-block bg-brand-yellow text-gray-900 font-bold text-xs px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+                  🇺🇸 North Charleston, SC
+                </span>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+                  Spanish is the{" "}
+                  <span className="text-brand-blue">2nd most spoken</span>{" "}
+                  language in the USA
+                </h1>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  At MIA Learning Center we instill a love for Spanish and fire
+                  up a curiosity for other cultures — through play, creativity,
+                  and immersive learning.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link href="/register" className="btn-primary text-base">
+                    ✏️ Register Now
+                  </Link>
+                  <Link href="/programs" className="btn-outline text-base">
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+              <div className="relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/img/hero.png"
+                  alt="Children learning Spanish at MIA"
+                  className="rounded-3xl shadow-2xl w-full object-cover"
+                />
+                <div className="absolute -bottom-4 -left-4 bg-brand-yellow rounded-2xl px-4 py-3 shadow-lg">
+                  <p className="font-extrabold text-gray-900 text-sm">🎉 3 Programs Available</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* VALUES */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-3 gap-6">
+              {values.map((v) => (
+                <div key={v.title} className="card border border-gray-100 text-center">
+                  <div className="text-4xl mb-3">{v.icon}</div>
+                  <h3 className="font-extrabold text-gray-900 text-lg mb-2">{v.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{v.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PROGRAMS */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="section-subtitle">How We Work</p>
+            <h2 className="section-title mb-12">Three programs for your children</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {programs.map((p) => (
+                <div
+                  key={p.code}
+                  className={`${p.color} ${p.textColor} rounded-3xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-200`}
+                >
+                  <div className="text-5xl mb-4">{p.icon}</div>
+                  <span className="text-xs font-bold uppercase tracking-widest opacity-70">{p.code}</span>
+                  <h3 className="text-xl font-extrabold mt-1 mb-3">{p.title}</h3>
+                  <p className="text-sm leading-relaxed opacity-90">{p.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link href="/programs" className="btn-outline">
+                See Full Program Details →
               </Link>
-              <Link href="/register" className="btn btn--full margin-left-small">
-                Register
-              </Link>
-            </div>
-            <div className="hero-img-box">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/img/hero.png"
-                className="hero-img"
-                alt="Three girls are painting and learning Spanish as second language"
-              />
             </div>
           </div>
         </section>
 
-        <section className="section-featured">
-          <div className="container grid grid--3-cols">
-            <div className="section-def">
-              <h2 className="heading-featured-in">Who we are</h2>
-              <hr className="marker" />
-              <ion-icon className="social-icon icon-color" name="people-outline"></ion-icon>
-              <p className="step-description">
-                A Learning Center with a fun, creative and adaptive approach to teach and learn
-                Spanish as a second language.
-              </p>
-            </div>
-
-            <div className="section-def">
-              <h2 className="heading-featured-in">What We want</h2>
-              <hr className="marker" />
-              <ion-icon className="social-icon icon-color" name="book-outline"></ion-icon>
-              <p className="step-description">
-                We offer families an immersive and flexible Spanish learning program. As well as
-                a multicultural afterschool education in a fun, engaging, and inclusive
-                environment.
-              </p>
-            </div>
-
-            <div className="section-def">
-              <h2 className="heading-featured-in">Our values</h2>
-              <hr className="marker" />
-              <ion-icon className="social-icon icon-color" name="diamond-outline"></ion-icon>
-              <p className="step-description">
-                At our core is the idea that differences and diversity make everything better and
-                stronger. As in the animal and natural world, diversity is not only necessary but
-                it creates better communities and environments in which we can flourish, develop
-                and grow both as individuals.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-how">
-          <div className="container">
-            <span className="subheading">How we work</span>
-            <h2 className="heading-secondary">
-              We offer three programs that care for and educate your children
-            </h2>
-          </div>
-          <div className="container grid grid--3-cols">
-            <div className="how-program">
-              <h2 className="subheading">Seasonal Activities (SA)</h2>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="program-img"
-                src="/img/program1.png"
-                alt="two kids take cares at MIA Learning Center"
-              />
-              <p className="step-description">
-                Because we want to teach Spanish as much as we can, there is no chance you can
-                miss to be part of MIA, that is why we designed seasonal activities, which allow
-                your children to get involved with a second language.
-              </p>
-            </div>
-
-            <div className="how-program">
-              <h2 className="subheading">Out Of School Hours (OOSH)</h2>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="program-img"
-                src="/img/program4.png"
-                alt="Chidren learn at MIA Learning Center"
-              />
-              <p className="step-description">
-                After-school hours childcare for children until 12 years old.
-              </p>
-            </div>
-
-            <div className="how-program">
-              <h2 className="subheading">Private Tutoring Class (PTC)</h2>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="program-img"
-                src="/img/program2.png"
-                alt="A teacher teaches Spanish to children at MIA Learning Center"
-              />
-              <p className="step-description">
-                Differentiated lessons designed for Spanish as a second language students of any
-                age or ability.
-              </p>
-            </div>
-          </div>
-          <div className="icon-center">
-            <Link href="/programs" className="btn btn--outline">
-              More Info...
-            </Link>
-          </div>
-        </section>
-
-        <section className="section-testimonials">
-          <div className="container testimonials-container">
-            <div className="center-testimonial">
-              <span className="subheading">Testimonials</span>
-              <h2 className="heading-tertiary">Grateful, Blessings, and Love for MIA</h2>
-            </div>
-            <div className="gallery">
+        {/* GALLERY PREVIEW */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="section-subtitle">Our Moments</p>
+            <h2 className="section-title mb-8">Life at MIA</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {[1, 2, 3, 4, 5, 6].map((n) => (
-                <figure className="gallery-item" key={n}>
+                <div key={n} className="relative overflow-hidden rounded-2xl aspect-square">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/img/galleria${n}.png`} alt="Children and teachers at MIA" />
-                </figure>
+                  <img
+                    src={`/img/galleria${n}.png`}
+                    alt="MIA Learning Center"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
               ))}
             </div>
-            <div className="testimonials">
+            <div className="text-center mt-8">
+              <Link href="/gallery" className="btn-outline">
+                View Full Gallery →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIALS */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-sky-100">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="section-subtitle">Testimonials</p>
+            <h2 className="section-title mb-12">Families love MIA ❤️</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {testimonials.map((t) => (
-                <figure className="testimonial" key={t.name}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img className="testimonial-img" src={`/img/${t.img}`} alt="" />
-                  <blockquote className="testimonial-text">
-                    <strong className="remark">&quot;{t.quote}</strong> {t.rest}
-                    <strong className="remark">&quot;</strong>
-                  </blockquote>
-                  <p className="testimonial-name">&mdash;{t.name}</p>
-                </figure>
+                <div key={t.name} className="card border border-blue-100">
+                  <div className="flex items-center gap-3 mb-4">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`/img/${t.img}`}
+                      alt={t.name}
+                      className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-blue"
+                    />
+                    <div>
+                      <p className="font-bold text-gray-900 text-sm">{t.name}</p>
+                      <div className="text-brand-yellow text-xs">★★★★★</div>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">&quot;{t.quote}&quot;</p>
+                </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-20 bg-brand-blue">
+          <div className="max-w-2xl mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              Ready to start your child&apos;s Spanish journey?
+            </h2>
+            <p className="text-blue-100 mb-8 text-lg">
+              Register today and join the MIA Learning Center family.
+            </p>
+            <Link href="/register" className="btn-secondary text-lg px-8 py-4">
+              ✏️ Register Now — It&apos;s Free!
+            </Link>
           </div>
         </section>
       </main>
