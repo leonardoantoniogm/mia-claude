@@ -1,11 +1,11 @@
 import { z } from "zod";
 
 const guardianSchema = z.object({
-  first_name: z.string().min(2, "Mínimo 2 caracteres"),
-  last_name: z.string().min(2, "Mínimo 2 caracteres"),
-  email: z.string().email("Email inválido"),
-  phone: z.string().min(7, "Teléfono inválido"),
-  address: z.string().min(5, "Dirección muy corta"),
+  first_name: z.string().min(2, "Minimum 2 characters"),
+  last_name: z.string().min(2, "Minimum 2 characters"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(7, "Invalid phone number"),
+  address: z.string().min(5, "Address is too short"),
 });
 
 export const registrationSchema = z.object({
@@ -13,31 +13,31 @@ export const registrationSchema = z.object({
   secondary: z.object({
     first_name: z.string().optional(),
     last_name: z.string().optional(),
-    email: z.string().email("Email inválido").optional().or(z.literal("")),
+    email: z.string().email("Invalid email address").optional().or(z.literal("")),
     phone: z.string().optional(),
     address: z.string().optional(),
   }).optional(),
   emergency: z.object({
-    contact_name: z.string().min(2, "Requerido"),
-    contact_phone: z.string().min(7, "Requerido"),
+    contact_name: z.string().min(2, "Required"),
+    contact_phone: z.string().min(7, "Required"),
     authorized_pickup: z.string().optional(),
     additional_emails: z.string().optional(),
     additional_phones: z.string().optional(),
   }),
   child: z.object({
-    first_name: z.string().min(2, "Requerido"),
-    last_name: z.string().min(2, "Requerido"),
-    date_of_birth: z.string().min(1, "Requerido"),
-    gender: z.enum(["female", "male"], { message: "Selecciona género" }),
-    allergies: z.string().min(1, "Requerido"),
-    medication: z.string().min(1, "Requerido"),
+    first_name: z.string().min(2, "Required"),
+    last_name: z.string().min(2, "Required"),
+    date_of_birth: z.string().min(1, "Required"),
+    gender: z.enum(["female", "male"], { message: "Please select a gender" }),
+    allergies: z.string().min(1, "Required"),
+    medication: z.string().min(1, "Required"),
     insurance: z.string().optional(),
   }),
   programs: z
     .array(z.enum(["OOSH", "PTC", "SA"]))
-    .min(1, "Selecciona al menos un programa"),
+    .min(1, "Please select at least one program"),
   photo_consent: z.boolean(),
-  signature: z.string().min(2, "Escribe tu nombre completo"),
+  signature: z.string().min(2, "Please enter your full name"),
 });
 
 export type RegistrationFormValues = z.infer<typeof registrationSchema>;
