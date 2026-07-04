@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useForm, Controller, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
@@ -12,6 +13,12 @@ import {
 } from "@/lib/validation";
 
 const TOTAL_STEPS = 5;
+
+const PROGRAM_LABELS: Record<string, string> = {
+  OOSH: "Out of School Hours (OOSH)",
+  PTC: "Private Tutoring Class (PTC)",
+  SA: "Seasonal Activities & Camps (SA)",
+};
 
 const stepTitles = [
   "Primary Parent / Guardian",
@@ -36,9 +43,19 @@ function Field({ label, error, children }: { label?: string; error?: string; chi
 const inputCls = "w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brand-blue transition-colors placeholder:text-gray-400";
 const textareaCls = `${inputCls} min-h-[80px] resize-none`;
 
+type SuccessData = {
+  id: number;
+  childName: string;
+  guardianName: string;
+  programs: string[];
+  createdAt: string;
+};
+
 export default function RegisterPage() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [successData, setSuccessData] = useState<SuccessData | null>(null);
 
   const {
     register,
@@ -69,8 +86,13 @@ export default function RegisterPage() {
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Registration failed");
       toast.dismiss(toastId);
-      toast.success("Registration submitted successfully!");
-      setStep(1);
+      setSuccessData({
+        id: result.data.id,
+        childName: result.data.childName,
+        guardianName: result.data.guardianName,
+        programs: data.programs,
+        createdAt: result.data.createdAt,
+      });
     } catch (error) {
       toast.dismiss(toastId);
       toast.error(error instanceof Error ? error.message : "Unexpected error");
@@ -327,6 +349,65 @@ export default function RegisterPage() {
           </div>
         </div>
       </main>
+
+      {/* SUCCESS MODAL */}
+      {successData && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 text-center animate-bounce-in">
+            <div className="text-6xl mb-4">🎉</div>
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-1">
+              Registration Confirmed!
+            </h2>
+            <p className="text-gray-500 text-sm mb-6">
+              Thank you for registering with MIA Learning Center.
+            </p>
+
+            {/* Registration number */}
+            <div className="bg-brand-blue/10 border-2 border-brand-blue rounded-2xl px-6 py-4 mb-6">
+              <p className="text-xs font-bold text-brand-blue uppercase tracking-widest mb-1">
+                Registration Number
+              </p>
+              <p className="text-4xl font-extrabold text-brand-blue">
+                #{String(successData.id).padStart(5, "0")}
+              </p>
+            </div>
+
+            {/* Summary */}
+            <div className="text-left space-y-2 mb-8">
+              <div className="flex justify-between text-sm border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">Child</span>
+                <span className="font-bold text-gray-900">{successData.childName}</span>
+              </div>
+              <div className="flex justify-between text-sm border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">Guardian</span>
+                <span className="font-bold text-gray-900">{successData.guardianName}</span>
+              </div>
+              <div className="flex justify-between text-sm border-b border-gray-100 pb-2">
+                <span className="text-gray-500 font-medium">Program(s)</span>
+                <span className="font-bold text-gray-900 text-right">
+                  {successData.programs.map((p) => PROGRAM_LABELS[p]).join(", ")}
+                </span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500 font-medium">Date</span>
+                <span className="font-bold text-gray-900">
+                  {new Date(successData.createdAt).toLocaleDateString("en-US", {
+                    year: "numeric", month: "long", day: "numeric",
+                  })}
+                </span>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => router.push("/")}
+              className="btn-primary w-full text-base py-3"
+            >
+              Back to Home
+            </button>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </>
